@@ -1,5 +1,5 @@
-# VuObjProg3Uzd
-Objektinio programavimo 3 užduotis
+# VuObjProg2Uzd
+Objektinio programavimo 2 užduotis
 
 Paulius Mykolaitis ISI I grupė, II pogrupis
 
