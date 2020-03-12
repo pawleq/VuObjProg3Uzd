@@ -28,6 +28,11 @@ v0.4
 
 3. Baigus darba, programa išmes visą informacija, apie tai, kiek truko failų sudarymas ar studento **sort'inimas**.
 
+| Studentų kiekis  | Failų generavimas | Duomenų nuskaitymas | Studentų rūšiavimas | Išvedimas į naujus failus |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Content Cell  | Content Cell  | | | |
+| Content Cell  | Content Cell  | | | |
+
 v0.3
 
 1. Įveskite + arba - (atitinkamai skaityti iš failo ar pačiam įrašyti duomenis);
