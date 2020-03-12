@@ -45,5 +45,5 @@ Programa, kurioje *random* sugeneruotus studentus įrašoma į du skirtingus fai
 
 v0.3 
 
-Programa, kurioje yra galimybė skaityti iš failo bei naudojami header **.h** failai.
+Programa, kurioje yra galimybė skaityti iš failo bei naudojami header **.h** failai. Kartu yra ir skaitymas (v0.2) jos padarytos ir sukeltos bendroje v0.3 versijoje.
 
