@@ -30,8 +30,11 @@ v0.4
 
 | Studentų kiekis  | Failų generavimas | Duomenų nuskaitymas | Studentų rūšiavimas | Išvedimas į naujus failus |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  | | | |
-| Content Cell  | Content Cell  | | | |
+| 1000  | Content Cell  | | | |
+| 10000  | Content Cell  | | | |
+| 100000 | | | | |
+| 1000000 | | | | |
+| 10000000 | | | | |
 
 v0.3
 
