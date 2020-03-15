@@ -20,7 +20,27 @@ Norint paleisti šią programa g++ compiler pagalba, nuėję į failo vietą, ra
 
 Galite naudoti programą.
 
-# Kaip naudoti programą?\
+# Kaip naudoti programą?
+vO.5
+Duomenų skaitymas iš failų
+| Įrašų kiekis | std::vector | std::deque | std::list |
+|--|--|--|--|
+| 1000 | 0.043547s | 0.0486927s | 0.0490872s | 
+| 10000 | 0.437449s | 0.46615s | 0.406974s |
+| 100000 | 4.29333s  | 4.75128s | 4.11859s | 
+| 1000000 | 45.9048s | 96.325s | 40.7198s | 
+| 10000000 | 486.684s | 502.214s | 561.485s |
+
+
+ Duomenų rūšiavimas į dvi kategorijas:
+| Įrašų kiekis | std::vector | std::deque | std::list |
+|--|--|--|--|
+| 1000 | 0.0308996s | 0.103681s | 0.0089471s |
+| 10000 | 0.282487s | 0.764503s | 0.079176s |
+| 100000 |  3.19421s  | 7.77904s | 2.9841s |
+| 1000000 | 38.8148s | 87.9481s | 45.8457s | 
+| 10000000 | 339.999s | 1605.55s | 425.8532s |
+ 
 v0.4
 1. Įveskite failo pavadnima, studentų kiekį bei pažymiu kiekį, kuris veliau bus naudojamas generuoti studentų sąrašui.
 
