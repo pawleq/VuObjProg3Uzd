@@ -23,6 +23,8 @@ Galite naudoti programą.
 # Kaip naudoti programą?
 v0.5
 
+intel i5 8250u @ 1.6gHz, 8.0GB ram
+
 Duomenų skaitymas iš failų
 | Įrašų kiekis | std::vector | std::deque | std::list |
 |--|--|--|--|
