@@ -21,7 +21,8 @@ Norint paleisti šią programa g++ compiler pagalba, nuėję į failo vietą, ra
 Galite naudoti programą.
 
 # Kaip naudoti programą?
-vO.5
+v0.5
+
 Duomenų skaitymas iš failų
 | Įrašų kiekis | std::vector | std::deque | std::list |
 |--|--|--|--|
@@ -67,7 +68,11 @@ v0.3
 4. Sukurtas sąrašas žmonių su ju vardais, galutiniais įvertinimais ir pažymių mediana!
 
 # Releases
-v0.4 (Final release).
+v0.5 
+
+Programa skirta skaiciuoti laika su std::list, std::deque ir std::vector.
+
+v0.4 
 
 Programa, kurioje *random* sugeneruotus studentus įrašoma į du skirtingus failus (>=5 gal. balas, ir <5 gal. balas) ir apskaičiuoja programos veikimo laiką : kol sukuriami failai, įrašomi studentai į skirtingus failus.
 
