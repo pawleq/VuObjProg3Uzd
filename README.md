@@ -24,7 +24,7 @@ Naudojant v0.4 ar v0.5, norint sugeneruoti studentu failus, reikia nueiti i *scr
 
 Norint studentus suskirstyti i failus, reikia nueiti i *scripts* directory su **cd scripts** ir parasyti **g++ splitData.cpp -o splitData**
 
-**/splitData**
+**./splitData**
 
 Galite naudoti programą.
 
