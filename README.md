@@ -90,3 +90,6 @@ v0.3
 
 Programa, kurioje yra galimybė skaityti iš failo bei naudojami header **.h** failai. Kartu yra ir skaitymas (v0.2) jos padarytos ir sukeltos bendroje v0.3 versijoje.
 
+v0.2
+
+Programa, kurioje yra galimybe skaityti studentu duomenu failus
