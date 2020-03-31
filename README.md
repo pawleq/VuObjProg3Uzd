@@ -30,25 +30,27 @@ v0.5
 
 intel i5 8250u @ 1.6gHz, 8.0GB ram
 
-Duomenų skaitymas iš failų
+Failu generavimas su 10 pazymiu
+
+| Įrašų kiekis |
+|--|
+| 1000 | 0,03452s |
+| 10000 |  0,98574s | 
+| 100000 |  1,5652s |
+| 1000000 | 12.45678s |
+| 10000000 | 120,54512s |
+
+Nuskaitymas is failu ir rusiavimas su 10 pazymiu
+
 | Įrašų kiekis | std::vector | std::deque | std::list |
 |--|--|--|--|
-| 1000 | 0,03452s | 0,0182s | 0,0171s |
-| 10000 |  0,98574s | 0,68542s | 0,95478s |
-| 100000 |  1,5652s | 1,02554s | 1,12525s |
-| 1000000 | 3,5245s | 4,2052s | 4,6425s |
-| 10000000 | 35,54512s | 45,9852s | 48,7845s |
+| 1000 | 0.066569s | 0,058194s | 0.048926s |
+| 10000 |  0.431014s | 0.303188s | 0.249416s |
+| 100000 |  4.26723s | 3.3032s | 2.84872s |
+| 1000000 | 54.84579s | 51.7396s | 28.9781s |
+| 10000000 | 299.54395s | 285.54856s | 232.5684s |
 
 
- Duomenų rūšiavimas į dvi kategorijas:
-| Įrašų kiekis | std::vector | std::deque | std::list |
-|--|--|--|--|
-| 1000 | 0,002s | 0,003s | 0,002s |
-| 10000 | 0,008s | 0,025s | 0,004s |
-| 100000 | 0,096s | 0,323s | 0,021s |
-| 1000000 | 1,1252s | 2,8452s | 0,756s |
-| 10000000 | 8,02s | 23,254s | 5,658s |
- 
 v0.4
 
 1. Įveskite studentų kiekį bei pažymiu kiekį, kuris veliau bus naudojamas generuoti studentų sąrašui.
@@ -59,7 +61,7 @@ v0.4
 
 | Studentų kiekis  | Programos laikas |
 | ------------- | ------------- | 
-| 1000 su 10 pazymiu |0.066569s | 
+| 1000 su 10 pazymiu | 0.066569s | 
 | 10000 su 10 pazymiu | 0.431014s | 
 | 100000 su 10 pazymiu | 4.26723s | 
 | 1000000 su 10 pazymiu | 54.84579s | 
