@@ -1,14 +1,8 @@
-app: main.o Student.o App.o
-	g++ main.o Student.o App.o -o app
-
-main.o: src/main.cpp
-	g++ -c src/main.cpp
-
-Student.o: src/Student.cpp
-	g++ -c src/Student.cpp
-
-App.o: src/App.cpp
-	g++ -c src/App.cpp
-
+main:funkcijos.o vectorMain.o
+	g++ -o main vectorMain.o funkcijos.o
+funkcijos:
+	g++ -c funkcijos.cpp
+vectorMain:
+	g++ -c vectorMain.cpp
 clean:
-	rm *.o app
+	rm *.o main
