@@ -26,29 +26,7 @@ Ištrina main ir .o failus.
 Galite naudoti programą.
 
 # Kaip naudoti programą?
-v0.5
 
-intel i5 8250u @ 1.6gHz, 8.0GB ram
-
-Duomenų skaitymas iš failų
-| Įrašų kiekis | std::vector | std::deque | std::list |
-|--|--|--|--|
-| 1000 | 0,03452s | 0,0182s | 0,0171s |
-| 10000 |  0,98574s | 0,68542s | 0,95478s |
-| 100000 |  1,5652s | 1,02554s | 1,12525s |
-| 1000000 | 3,5245s | 4,2052s | 4,6425s |
-| 10000000 | 35,54512s | 45,9852s | 48,7845s |
-
-
- Duomenų rūšiavimas į dvi kategorijas:
-| Įrašų kiekis | std::vector | std::deque | std::list |
-|--|--|--|--|
-| 1000 | 0,002s | 0,003s | 0,002s |
-| 10000 | 0,008s | 0,025s | 0,004s |
-| 100000 | 0,096s | 0,323s | 0,021s |
-| 1000000 | 1,1252s | 2,8452s | 0,756s |
-| 10000000 | 8,02s | 23,254s | 5,658s |
- 
 v0.4
 
 1. Įveskite studentų kiekį bei pažymiu kiekį, kuris veliau bus naudojamas generuoti studentų sąrašui.
@@ -76,9 +54,6 @@ v0.3
 4. Sukurtas sąrašas žmonių su ju vardais, galutiniais įvertinimais ir pažymių mediana!
 
 # Releases
-v0.5 
-
-Programa skirta skaiciuoti laika su std::list, std::deque ir std::vector.
 
 v0.4 
 
