@@ -30,6 +30,12 @@ v0.5
 
 intel i5 8250u @ 1.6gHz, 8.0GB ram
 
+1. Atsidarome **SarasoGen.cpp** faila, ji sukompiliuojame ir parasome kiek studentu norime sugerenuoti ir kiek pazymiu;
+
+2. Tada atisdarome tam tikra faila : jei norite programos su deque konteineriu - DeQueMain.cpp, jei su list - listMain.cpp, o jeigu su vector - vectorMain.cpp;
+
+3. Suvedame, kas yra prasoma, o paprasius failo, is kurio skaityti duomenis, iveski **kursiokai.txt**.
+
 Failu generavimas su 10 pazymiu
 
 | Įrašų kiekis |
