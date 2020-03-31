@@ -1,8 +1,11 @@
-main:funkcijos.o vectorMain.o
-	g++ -o main vectorMain.o funkcijos.o
-funkcijos:
-	g++ -c funkcijos.cpp
-vectorMain:
-	g++ -c vectorMain.cpp
+CC=g++
+Vector:
+	$(CC) -o Vector vectorMain.cpp funkcijos.cpp
+Deque: 
+	$(CC) -o Deque DeQueMain.cpp Dequefunkcijos.cpp
+List:
+	$(CC) -o List listMain.cpp Listfunkcijos.cpp
+GenerateFile:
+	$(CC) -o GenerateFile SarasoGen.cpp
 clean:
-	rm *.o main
+	rm *.o *.exe *.txt
