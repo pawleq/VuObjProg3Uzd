@@ -12,19 +12,16 @@ Jeigu naudojate CodeBlocks, sekite šiuos žingsnius :
 Jeigu naudojate C++ compiler, pavyzdziui, GCC, tai :
 
 Norint paleisti šią programa g++ compiler pagalba, nuėję į failo vietą, rašykite : 
-**make clean**
 
-***make**
+Makefile commands:
 
-**./app**
+**make**
 
-Naudojant v0.4 ar v0.5, norint sugeneruoti studentu failus, reikia nueiti i *scripts* directory su **cd scripts** ir parasyti **g++ generateStudentsFile.cpp -o generate**
+Sukuria .o failus ir juos sulinkina i "main" faila;
 
-**./generate**
+**clean**
 
-Norint studentus suskirstyti i failus, reikia nueiti i *scripts* directory su **cd scripts** ir parasyti **g++ splitData.cpp -o splitData**
-
-**./splitData**
+Ištrina main ir .o failus.
 
 Galite naudoti programą.
 
@@ -53,7 +50,8 @@ Duomenų skaitymas iš failų
 | 10000000 | 8,02s | 23,254s | 5,658s |
  
 v0.4
-1. Įveskite failo pavadnima, studentų kiekį bei pažymiu kiekį, kuris veliau bus naudojamas generuoti studentų sąrašui.
+
+1. Įveskite studentų kiekį bei pažymiu kiekį, kuris veliau bus naudojamas generuoti studentų sąrašui.
 
 2. Palaukit, kol programa baigs savo darba.
 
@@ -93,3 +91,7 @@ Programa, kurioje yra galimybė skaityti iš failo bei naudojami header **.h** f
 v0.2
 
 Programa, kurioje yra galimybe skaityti studentu duomenu failus
+
+v0.1
+
+Programa, kuri skaiciuoja studentu galutini ivertinima, ivedant studento varda/pavarde, pazymiu kieki bei pacius pazymius
