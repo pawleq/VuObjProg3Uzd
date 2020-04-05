@@ -1,8 +1,10 @@
+#pragma once
+#include <cctype>
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <vector>
 #include <algorithm>
+#include <list>
 #include <random>
 #include <fstream>
 #include <sstream>
@@ -15,6 +17,7 @@ using std::string;
 using std::setw;
 using std::setfill;
 using std::vector;
+using std::list;
 using std::getline;
 using std::ifstream;
 using std::istringstream;
@@ -28,7 +31,7 @@ struct studentas
 	double galutmed;
 	double mediana;
 
-	void Print(unsigned int &Pilgis,unsigned int &Vilgis) {
+	void Print(unsigned int &Pilgis, unsigned int &Vilgis) {
 		cout << setw(Pilgis + 6) << std::left << setfill(' ') << pavarde;
 		cout << setw(Vilgis + 6) << std::left << setfill(' ') << vardas;
 		cout << setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << galutinis << galutmed << endl;
@@ -48,7 +51,7 @@ struct studentas
 		double suma = 0;
 		if (v.size() > 0)
 		{
-			for (int i = 0; i < v.size(); i++)
+			for (size_t i = 0; i < v.size(); i++)
 			{
 				suma += v[i];
 			}
@@ -62,16 +65,15 @@ struct studentas
 
 class Timer {
 private:
-  // panaudojame using klases memberiams
-  using hrClock = std::chrono::high_resolution_clock;
-  using durationDouble = std::chrono::duration<double>;
-  std::chrono::time_point<hrClock> start;
+	using hrClock = std::chrono::high_resolution_clock;
+	using durationDouble = std::chrono::duration<double>;
+	std::chrono::time_point<hrClock> start;
 public:
 	Timer() : start{ hrClock::now() } {}
 	void reset() {
 		start = hrClock::now();
 	}
 	double elapsed() const {
-		return durationDouble (hrClock::now() - start).count();
+		return durationDouble(hrClock::now() - start).count();
 	}
 };

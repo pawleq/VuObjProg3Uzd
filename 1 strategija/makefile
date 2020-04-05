@@ -8,4 +8,4 @@ List:
 GenerateFile:
 	$(CC) -o GenerateFile SarasoGen.cpp
 clean:
-	rm *.o *.exe *.txt
+	rm *. *.txt

@@ -1,4 +1,3 @@
-//generuot
 #include <fstream>
 #include <iostream>
 #include <random>
