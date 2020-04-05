@@ -26,9 +26,68 @@ Ištrina main ir .o failus.
 Galite naudoti programą.
 
 # Kaip naudoti programą?
-v0.5
 
 intel i5 8250u @ 1.6gHz, 8.0GB ram
+
+v1.0 (pirma strategija)
+
+1. Atsidarome **SarasoGen.cpp** faila, ji sukompiliuojame ir parasome, kiek studentu norime sugerenuoti ir kiek pazymiu;
+
+2. Tada atisdarome tam tikra faila : jei norite programos su deque konteineriu - DeQueMain.cpp, jei su list - listMain.cpp, o jeigu su vector - vectorMain.cpp;
+
+3. Suvedame, kas yra prasoma, o paprasius failo, is kurio skaityti duomenis, iveski **kursiokai.txt**.
+
+Failo generavimas su 10 pazymiu
+
+| Įrašų kiekis |
+|--|
+| 1000 | 0,03452s |
+| 10000 |  0,98574s | 
+| 100000 |  1,5652s |
+| 1000000 | 12.45678s |
+| 10000000 | 120,54512s |
+
+Nuskaitymas is failu ir rusiavimas su 10 pazymiu
+
+| Įrašų kiekis | std::vector | std::deque | std::list |
+|--|--|--|--|
+| 1000 | 0.047167s | 0.039861 s | 0.035906s |
+| 10000 |  0.317576s | 0.376004 s | 0.259386s |
+| 100000 |  3.56723s | 4.00563s | 2.84872s |
+| 1000000 | 45.84579s | 55.7396s | 29.017 s |
+| 10000000 | 275.54395s | 289.86856s | 232.5684s |
+
+v1.0 (antra strategija)
+
+1. Atsidarome **SarasoGen.cpp** faila, ji sukompiliuojame ir parasome, kiek studentu norime sugerenuoti ir kiek pazymiu;
+
+2. Tada atisdarome tam tikra faila : jei norite programos su deque konteineriu - DeQueMain.cpp, jei su list - listMain.cpp, o jeigu su vector - vectorMain.cpp;
+
+3. Suvedame, kas yra prasoma, o paprasius failo, is kurio skaityti duomenis, iveski **kursiokai.txt**.
+
+Failo generavimas su 10 pazymiu
+
+| Įrašų kiekis |
+|--|
+| 1000 | 0,03452s |
+| 10000 |  0,98574s | 
+| 100000 |  1,5652s |
+| 1000000 | 12.45678s |
+| 10000000 | 120,54512s |
+
+Nuskaitymas is failu ir rusiavimas su 10 pazymiu
+
+| Įrašų kiekis | std::vector | std::deque | std::list |
+|--|--|--|--|
+| 1000 | 0.047065s | 0.039936s | 0.0369s |
+| 10000 |  0.318903s | 0.335106s | 0.27327s |
+| 100000 |  3.23166s | 3.15175s | 2.61405s |
+| 1000000 | 32.1526 s | 33.8606 s | 25.704s |
+| 10000000 | 265.54395s | 287.78556s | 225.5684s |
+
+**Pirma strategija yra letesne, kai sukuriami du atskiri konteineriai ir i juos surusiuojama bendro konteinerio studentai, o antra strategija, kai sukuriamas atskiras konteineris, pvz, vargsiukams ir i ji sutalpinami vargsiukai ir is bendro konteinerio jie istrinami**
+
+v0.5
 
 1. Atsidarome **SarasoGen.cpp** faila, ji sukompiliuojame ir parasome, kiek studentu norime sugerenuoti ir kiek pazymiu;
 
@@ -84,6 +143,11 @@ v0.3
 4. Sukurtas sąrašas žmonių su ju vardais, galutiniais įvertinimais ir pažymių mediana!
 
 # Releases
+
+v1.0
+
+Programa su dviem skirtingom strategijom, 1 - dvieju nauju konteineriu sukurimas ir isrusiavimas, 2 - vieno naujo konterinerio sukurimas kazkuriai studentu grupei, tada perkeliant i ji atitinkamus studentus, o is bendro konterinerio jie istrinami.
+
 v0.5 
 
 Programa skirta skaiciuoti laika su std::list, std::deque ir std::vector.
