@@ -57,7 +57,7 @@ Nuskaitymas is failu ir rusiavimas su 10 pazymiu
 | 1000000 | 45.84579s | 55.7396s | 29.017 s |
 | 10000000 | 275.54395s | 289.86856s | 232.5684s |
 
-v1.0 (antra strategija)
+v1.0 (antra strategija su optimizuotais vector konteineriais)
 
 1. Atsidarome **SarasoGen.cpp** faila, ji sukompiliuojame ir parasome, kiek studentu norime sugerenuoti ir kiek pazymiu;
 
