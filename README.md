@@ -142,6 +142,26 @@ v0.3
 
 4. Sukurtas sąrašas žmonių su ju vardais, galutiniais įvertinimais ir pažymių mediana!
 
+v0.2
+
+1. Įveskite + arba - (atitinkamai skaityti iš failo ar pačiam įrašyti duomenis);
+
+2. Jeigu pasirinkot skaitymą iš failo, tai viskas bus padaryta be papildomų pastangų (failo pavadinimas turi būti "Kursiokai.txt");
+
+3. Jeigu pasirinkot duomenų įvedimą, tai sekite viską, kas bus nurodyta kompiliatoriuje;
+
+4. Sukurtas sąrašas žmonių su ju vardais, galutiniais įvertinimais ir pažymių mediana!
+
+v0.1
+
+1. Įveskite studentu kieki;
+
+2. Iveskite studento varda / pavarde;
+
+3. Iveskite atitinkama raide, t - ivesti pazymius, n - ivesti, bet be ribojimo (ivesti stop norint stabdyti ivedima), r - random sugeneruoti pazymiai;
+
+4. Iveskite egzamino pazymi (jei pasirinkot random pazymius, jis bus sugeneruotas atsitiktinai).
+
 # Releases
 
 v1.0
