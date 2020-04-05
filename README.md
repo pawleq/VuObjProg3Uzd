@@ -30,40 +30,48 @@ v0.5
 
 intel i5 8250u @ 1.6gHz, 8.0GB ram
 
-Duomenų skaitymas iš failų
+1. Atsidarome **SarasoGen.cpp** faila, ji sukompiliuojame ir parasome, kiek studentu norime sugerenuoti ir kiek pazymiu;
+
+2. Tada atisdarome tam tikra faila : jei norite programos su deque konteineriu - DeQueMain.cpp, jei su list - listMain.cpp, o jeigu su vector - vectorMain.cpp;
+
+3. Suvedame, kas yra prasoma, o paprasius failo, is kurio skaityti duomenis, iveski **kursiokai.txt**.
+
+Failu generavimas su 10 pazymiu
+
+| Įrašų kiekis |
+|--|
+| 1000 | 0,03452s |
+| 10000 |  0,98574s | 
+| 100000 |  1,5652s |
+| 1000000 | 12.45678s |
+| 10000000 | 120,54512s |
+
+Nuskaitymas is failu ir rusiavimas su 10 pazymiu
+
 | Įrašų kiekis | std::vector | std::deque | std::list |
 |--|--|--|--|
-| 1000 | 0,03452s | 0,0182s | 0,0171s |
-| 10000 |  0,98574s | 0,68542s | 0,95478s |
-| 100000 |  1,5652s | 1,02554s | 1,12525s |
-| 1000000 | 3,5245s | 4,2052s | 4,6425s |
-| 10000000 | 35,54512s | 45,9852s | 48,7845s |
+| 1000 | 0.066569s | 0,058194s | 0.048926s |
+| 10000 |  0.431014s | 0.303188s | 0.249416s |
+| 100000 |  4.26723s | 3.3032s | 2.84872s |
+| 1000000 | 54.84579s | 51.7396s | 28.9781s |
+| 10000000 | 299.54395s | 285.54856s | 232.5684s |
 
 
- Duomenų rūšiavimas į dvi kategorijas:
-| Įrašų kiekis | std::vector | std::deque | std::list |
-|--|--|--|--|
-| 1000 | 0,002s | 0,003s | 0,002s |
-| 10000 | 0,008s | 0,025s | 0,004s |
-| 100000 | 0,096s | 0,323s | 0,021s |
-| 1000000 | 1,1252s | 2,8452s | 0,756s |
-| 10000000 | 8,02s | 23,254s | 5,658s |
- 
 v0.4
 
 1. Įveskite studentų kiekį bei pažymiu kiekį, kuris veliau bus naudojamas generuoti studentų sąrašui.
 
 2. Palaukit, kol programa baigs savo darba.
 
-3. Baigus darba, programa išmes visą informacija, apie tai, kiek truko failų sudarymas ar studento **sort'inimas**.
+3. Baigus darba, programa išmes bendrą informaciją, apie tai, kiek truko failų sudarymas ir studentų **sort'inimas**.
 
-| Studentų kiekis  | Failų generavimas | Duomenų nuskaitymas | Studentų rūšiavimas | Išvedimas į naujus failus |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1000  | 0.0334759s | 0.050547s | 0.03608996s | 0.0328836s |
-| 10000  | 0.328879s | 0.407449s | 0.332487s | 0.30899s |
-| 100000 | 2.97213s | 5.29333s | 4.19421s | 3.45287s |
-| 1000000 | 28.2486s | 51.9048s	 | 43.8148s | 36.3797s |
-| 10000000 | 299.395s | 482.684s | 439.999s | 337.5145s |
+| Studentų kiekis  | Programos laikas |
+| ------------- | ------------- | 
+| 1000 su 10 pazymiu | 0.066569s | 
+| 10000 su 10 pazymiu | 0.431014s | 
+| 100000 su 10 pazymiu | 4.26723s | 
+| 1000000 su 10 pazymiu | 54.84579s | 
+| 10000000 su 10 pazymiu | 299.54395s | 
 
 v0.3
 
