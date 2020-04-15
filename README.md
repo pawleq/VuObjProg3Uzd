@@ -33,15 +33,15 @@ v0.4
 
 2. Palaukit, kol programa baigs savo darba.
 
-3. Baigus darba, programa išmes visą informacija, apie tai, kiek truko failų sudarymas ar studento **sort'inimas**.
+3. Baigus darba, programa išmes bendrą informaciją, apie tai, kiek truko failų sudarymas ir studentų **sort'inimas**.
 
-| Studentų kiekis  | Failų generavimas | Duomenų nuskaitymas | Studentų rūšiavimas | Išvedimas į naujus failus |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1000  | 0.0334759s | 0.050547s | 0.03608996s | 0.0328836s |
-| 10000  | 0.328879s | 0.407449s | 0.332487s | 0.30899s |
-| 100000 | 2.97213s | 5.29333s | 4.19421s | 3.45287s |
-| 1000000 | 28.2486s | 51.9048s	 | 43.8148s | 36.3797s |
-| 10000000 | 299.395s | 482.684s | 439.999s | 337.5145s |
+| Studentų kiekis  | Programos laikas |
+| ------------- | ------------- | 
+| 1000 su 10 pazymiu | 0.066569s | 
+| 10000 su 10 pazymiu | 0.431014s | 
+| 100000 su 10 pazymiu | 4.26723s | 
+| 1000000 su 10 pazymiu | 54.84579s | 
+| 10000000 su 10 pazymiu | 299.54395s | 
 
 v0.3
 
