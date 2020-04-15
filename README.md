@@ -39,11 +39,11 @@ v1.0 (pirma strategija)
 
 Failo generavimas su 10 pazymiu
 
-| Įrašų kiekis |
-|--|
+| Įrašų kiekis | Laikas |
+|--|--|
 | 1000 | 0,03452s |
-| 10000 |  0,98574s | 
-| 100000 |  1,5652s |
+| 10000 | 0,98574s | 
+| 100000 | 1,5652s |
 | 1000000 | 12.45678s |
 | 10000000 | 120,54512s |
 
@@ -67,11 +67,11 @@ v1.0 (antra strategija su optimizuotais vector konteineriais)
 
 Failo generavimas su 10 pazymiu
 
-| Įrašų kiekis |
-|--|
+| Įrašų kiekis | Laikas |
+|--|--|
 | 1000 | 0,03452s |
-| 10000 |  0,98574s | 
-| 100000 |  1,5652s |
+| 10000 | 0,98574s | 
+| 100000 | 1,5652s |
 | 1000000 | 12.45678s |
 | 10000000 | 120,54512s |
 
@@ -97,11 +97,11 @@ v0.5
 
 Failu generavimas su 10 pazymiu
 
-| Įrašų kiekis |
-|--|
+| Įrašų kiekis | Laikas |
+|--|--|
 | 1000 | 0,03452s |
-| 10000 |  0,98574s | 
-| 100000 |  1,5652s |
+| 10000 | 0,98574s | 
+| 100000 | 1,5652s |
 | 1000000 | 12.45678s |
 | 10000000 | 120,54512s |
 
