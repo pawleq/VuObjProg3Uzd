@@ -159,27 +159,6 @@ void FindLongest(list<studentas> &input, unsigned int &Vilgis, unsigned int &Pil
 			Pilgis = (*it).pavarde.length();
 	}
 }
-void Generavimas(int r, int e, Timer& t)
-{
-	std::default_random_engine generator;
-	std::uniform_int_distribution<int> dist(1, 10);
-	std::uniform_int_distribution<int> Ndist(1, 100000);
-	std::ofstream file("kursiokai.txt");
-
-	std::string vardas = "Vardas";
-	std::string pavarde = "Pavarde";
-	for (int i = 0; i < r; i++)
-	{
-		file << vardas << Ndist(generator) << " " << pavarde << Ndist(generator) << " ";
-		for (int j = 0; j < e; j++)
-		{
-			file << dist(generator) << " ";
-		}
-		file << dist(generator);
-		if (i != r - 1)
-			file << std::endl;
-	}
-}
 void FileRead(list<studentas> &studentai, ifstream &file)
 {
 	studentas input;
@@ -282,31 +261,21 @@ void VectorSplit(list <studentas> &studentai, int &b, unsigned int& Vilgis,unsig
 
 
 	std::ofstream failas("vargsiukai.txt");
-	failas << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde ";
-	failas << setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas ";
-	failas << setw(16) << std::left << setfill(' ') << "Galutinis vid. ";
-	failas << setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
+	failas << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde "<< setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas "<< setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas "<< setw(16) << std::left << setfill(' ') << "Galutinis vid. "<< setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
 	string eilute(Pilgis + Vilgis + 40, '-');
 	failas << eilute << endl;
 	list<studentas>::iterator itmax = studentai.begin();
 	std::advance(itmax, n);
 	for (list<studentas>::iterator it = studentai.begin(); it != itmax; ++it) {
-		failas << setw(Pilgis + 6) << std::left << setfill(' ') << (*it).pavarde;
-		failas << setw(Vilgis + 6) << std::left << setfill(' ') << (*it).vardas;
-		failas << setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << (*it).galutinis << (*it).galutmed << endl;
+		failas << setw(Pilgis + 6) << std::left << setfill(' ') << (*it).pavarde<< setw(Vilgis + 6) << std::left << setfill(' ') << (*it).vardas<< setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << (*it).galutinis << (*it).galutmed << endl;
 	}
 	std::ofstream failas1("kietekai.txt");
-	failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde ";
-	failas1 << setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas ";
-	failas1 << setw(16) << std::left << setfill(' ') << "Galutinis vid. ";
-	failas1 << setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
+	failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde "<< setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas "<< setw(16) << std::left << setfill(' ') << "Galutinis vid. " << setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
 	string eilute1(Pilgis + Vilgis + 40, '-');
 	failas1 << eilute1 << endl;
 	for (list<studentas>::iterator it = itmax++; it != studentai.end(); ++it)
 	{
-		failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << (*it).pavarde;
-		failas1 << setw(Vilgis + 6) << std::left << setfill(' ') << (*it).vardas;
-		failas1 << setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << (*it).galutinis << (*it).galutmed << endl;
+		failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << (*it).pavarde<< setw(Vilgis + 6) << std::left << setfill(' ') << (*it).vardas<< setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << (*it).galutinis << (*it).galutmed << endl;
 	}
 }
 void SpartosAnalize(list<studentas> &studentai)
@@ -319,8 +288,8 @@ void SpartosAnalize(list<studentas> &studentai)
 	cout<<"Iveskite studentu failo pavadinima"<<endl;
 	cin>>pav;
 	cout << "Pradedamas matuoti laikas" << endl;
-	Timer t;
-
+    std::chrono::steady_clock::time_point beginRead =
+    std::chrono::steady_clock::now();
 	ifstream file(pav);
 	if(!file)
 	{
@@ -331,7 +300,14 @@ void SpartosAnalize(list<studentas> &studentai)
 	{
 		FileRead(studentai, file);
 	}
+	std::chrono::steady_clock::time_point endRead =
+    std::chrono::steady_clock::now();
 	FindLongest(studentai, Vilgis, Pilgis);
+	std::chrono::steady_clock::time_point beginSplit =
+    std::chrono::steady_clock::now();
 	VectorSplit(studentai, b, Vilgis, Pilgis);
-	cout << "Praejo " << t.elapsed() << " s" << endl;
+	std::chrono::steady_clock::time_point endSplit =
+    std::chrono::steady_clock::now();
+    std::cout << "Skaitymo laikas: "<< (double)std::chrono::duration_cast<std::chrono::milliseconds>(endRead - beginRead).count() / 1000<< "s" << std::endl;
+    std::cout << "Dalinimo ir irasymo laikas: "<< (double)std::chrono::duration_cast<std::chrono::milliseconds>(endSplit - beginSplit).count() / 1000<< "s" << std::endl;
 }

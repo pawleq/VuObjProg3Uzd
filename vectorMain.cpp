@@ -12,11 +12,11 @@ void Generavimas(int r, int e);
 void FileRead(vector<studentas> &studentai, ifstream &file);
 void Interface(vector<studentas> &studentai);
 void SpartosAnalize(vector<studentas> &studentai);
-void VectorSplit(vector<studentas> &studentai, int &b, unsigned int &Vilgis, unsigned int &Pilgis);
+void VectorSplit(vector<studentas> &studentai, int &b, unsigned int &Vilgis, unsigned int &Pilgis, double & Split);
 int main()
 {
 	int r;
-	cout << "Ar norite vykdyti 0.4 (Spartos analize) ar ankstesnes versijas?" << endl;
+	cout << "Ar norite vykdyti 0.5 (Spartos analize) ar ankstesnes versijas?" << endl;
 	cout << "1-spartos analize 0 -ankstesnes " << endl;
 	r = CinFail(0);
 	vector<studentas> studentai;

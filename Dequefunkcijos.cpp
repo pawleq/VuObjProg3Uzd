@@ -160,27 +160,6 @@ void FindLongest(deque<studentas> &input, unsigned int &Vilgis, unsigned int &Pi
 			Pilgis = input[i].pavarde.length();
 	}
 }
-void Generavimas(int r, int e, Timer& t)
-{
-	std::default_random_engine generator;
-	std::uniform_int_distribution<int> dist(1, 10);
-	std::uniform_int_distribution<int> Ndist(1, 100000);
-	std::ofstream file("kursiokai.txt");
-
-	std::string vardas = "Vardas";
-	std::string pavarde = "Pavarde";
-	for (int i = 0; i < r; i++)
-	{
-		file << vardas << Ndist(generator) << " " << pavarde << Ndist(generator) << " ";
-		for (int j = 0; j < e; j++)
-		{
-			file << dist(generator) << " ";
-		}
-		file << dist(generator);
-		if (i != r - 1)
-			file << std::endl;
-	}
-}
 void FileRead(deque<studentas> &studentai, ifstream &file)
 {
 	studentas input;
@@ -316,8 +295,8 @@ void SpartosAnalize(deque<studentas> &studentai)
 	cout<<"Iveskite studentu failo pavadinima"<<endl;
 	cin>>pav;
 	cout << "Pradedamas matuoti laikas" << endl;
-	Timer t;
-
+    std::chrono::steady_clock::time_point beginRead =
+    std::chrono::steady_clock::now();
 	ifstream file(pav);
 	if(!file)
 	{
@@ -328,7 +307,14 @@ void SpartosAnalize(deque<studentas> &studentai)
 	{
 		FileRead(studentai, file);
 	}
-	FindLongest(studentai, Vilgis, Pilgis);
+	std::chrono::steady_clock::time_point endRead =
+    std::chrono::steady_clock::now();
+    FindLongest(studentai, Vilgis, Pilgis);
+    std::chrono::steady_clock::time_point beginSplit =
+    std::chrono::steady_clock::now();
 	dequeSplit(studentai, b, Vilgis, Pilgis);
-	cout << "Praejo " << t.elapsed() << " s" << endl;
+    std::chrono::steady_clock::time_point endSplit =
+    std::chrono::steady_clock::now();
+    std::cout << "Skaitymo laikas: "<< (double)std::chrono::duration_cast<std::chrono::milliseconds>(endRead - beginRead).count() / 1000<< "s" << std::endl;
+    std::cout << "Dalinimo ir irasymo laikas: "<< (double)std::chrono::duration_cast<std::chrono::milliseconds>(endSplit - beginSplit).count() / 1000<< "s" << std::endl;
 }

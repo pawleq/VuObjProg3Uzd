@@ -160,7 +160,7 @@ void FindLongest(vector<studentas> &input, unsigned int &Vilgis, unsigned int &P
 			Pilgis = input[i].pavarde.length();
 	}
 }
-void Generavimas(int r, int e, Timer& t)
+void Generavimas(int r, int e)
 {
 	std::default_random_engine generator;
 	std::uniform_int_distribution<int> dist(1, 10);
@@ -281,29 +281,19 @@ void vectorSplit(vector <studentas> &studentai, int &b, unsigned int &Vilgis, un
 
 
 	std::ofstream failas("vargsiukai.txt");
-	failas << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde ";
-	failas << setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas ";
-	failas << setw(16) << std::left << setfill(' ') << "Galutinis vid. ";
-	failas << setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
+	failas << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde "<< setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas "<< setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas "<< setw(16) << std::left << setfill(' ') << "Galutinis vid. "<< setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
 	string eilute(Pilgis + Vilgis + 40, '-');
 	failas << eilute << endl;
 	for (int i = 0; i < n; i++) {
-		failas << setw(Pilgis + 6) << std::left << setfill(' ') << studentai[i].pavarde;
-		failas << setw(Vilgis + 6) << std::left << setfill(' ') << studentai[i].vardas;
-		failas << setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << studentai[i].galutinis << studentai[i].galutmed << endl;
+		failas << setw(Pilgis + 6) << std::left << setfill(' ') << studentai[i].pavarde<< setw(Vilgis + 6) << std::left << setfill(' ') << studentai[i].vardas<< setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << studentai[i].galutinis << studentai[i].galutmed << endl;
 	}
 	std::ofstream failas1("kietekai.txt");
-	failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde ";
-	failas1 << setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas ";
-	failas1 << setw(16) << std::left << setfill(' ') << "Galutinis vid. ";
-	failas1 << setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
+	failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde "<< setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas "<< setw(16) << std::left << setfill(' ') << "Galutinis vid. " << setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
 	string eilute1(Pilgis + Vilgis + 40, '-');
 	failas1 << eilute1 << endl;
 	for (size_t i = n; i < studentai.size(); i++)
 	{
-		failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << studentai[i].pavarde;
-		failas1 << setw(Vilgis + 6) << std::left << setfill(' ') << studentai[i].vardas;
-		failas1 << setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << studentai[i].galutinis << studentai[i].galutmed << endl;
+		failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << studentai[i].pavarde << setw(Vilgis + 6) << std::left << setfill(' ') << studentai[i].vardas<< setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << studentai[i].galutinis << studentai[i].galutmed << endl;
 	}
 }
 void SpartosAnalize(vector<studentas> &studentai)
@@ -338,14 +328,22 @@ void SpartosAnalize(vector<studentas> &studentai)
 	cout << "Ar norite skaiciuoti vargsiukus ir kietekus pagal medianas ar vidurkius? 1-vidurkis 0-mediana" << endl;
 	int b = CinFail(0);
 	cout << "Pradedamas matuoti laikas" << endl;
-	Timer t;
-	Generavimas(r, e, t);
+	Generavimas(r, e);
+    std::chrono::steady_clock::time_point beginRead =
+    std::chrono::steady_clock::now();
 	ifstream file("kursiokai.txt");
 	while (!file.eof())
 	{
 		FileRead(studentai, file);
 	}
+    std::chrono::steady_clock::time_point endRead =
+    std::chrono::steady_clock::now();
 	FindLongest(studentai, Vilgis, Pilgis);
+	std::chrono::steady_clock::time_point beginSplit =
+    std::chrono::steady_clock::now();
 	vectorSplit(studentai, b, Vilgis, Pilgis);
-	cout << "Praejo " << t.elapsed() << " s" << endl;
+	std::chrono::steady_clock::time_point endSplit =
+    std::chrono::steady_clock::now();
+    std::cout << "Skaitymo laikas: "<< (double)std::chrono::duration_cast<std::chrono::milliseconds>(endRead - beginRead).count() / 1000<< "s" << std::endl;
+    std::cout << "Dalinimo ir irasymo laikas: "<< (double)std::chrono::duration_cast<std::chrono::milliseconds>(endSplit - beginSplit).count() / 1000<< "s" << std::endl;
 }

@@ -60,7 +60,7 @@ struct studentas
 	}
 };
 
-class Timer {
+/*class Timer {
 private:
   // panaudojame using klases memberiams
   using hrClock = std::chrono::high_resolution_clock;
@@ -74,4 +74,4 @@ public:
 	double elapsed() const {
 		return durationDouble (hrClock::now() - start).count();
 	}
-};
+};*/

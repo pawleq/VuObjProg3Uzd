@@ -16,7 +16,7 @@ void VectorSplit(deque<studentas> &studentai, int &b, unsigned int &Vilgis, unsi
 int main()
 {
 	int r;
-	cout << "Ar norite vykdyti 0.4 (Spartos analize) ar ankstesnes versijas?" << endl;
+	cout << "Ar norite vykdyti 0.5 (Spartos analize) ar ankstesnes versijas?" << endl;
 	cout << "1-spartos analize 0 -ankstesnes " << endl;
 	r = CinFail(0);
 	deque<studentas> studentai;
