@@ -127,10 +127,6 @@ v0.1
 
 # Releases
 
-v1.0
-
-Programa su dviem skirtingom strategijom, 1 - dvieju nauju konteineriu sukurimas ir isrusiavimas, 2 - vieno naujo konterinerio sukurimas kazkuriai studentu grupei, tada perkeliant i ji atitinkamus studentus, o is bendro konterinerio jie istrinami.
-
 v0.5 
 
 Programa skirta skaiciuoti laika su std::list, std::deque ir std::vector.
