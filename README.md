@@ -26,9 +26,18 @@ Ištrina main ir .o failus.
 Galite naudoti programą.
 
 # Kaip naudoti programą?
-v0.5
 
 intel i5 8250u @ 1.6gHz, 8.0GB ram
+
+v1.0 (pirma strategija)
+
+1. Atsidarome **SarasoGen.cpp** faila, ji sukompiliuojame ir parasome, kiek studentu norime sugerenuoti ir kiek pazymiu;
+
+2. Tada atisdarome tam tikra faila : jei norite programos su deque konteineriu - DeQueMain.cpp, jei su list - listMain.cpp, o jeigu su vector - vectorMain.cpp;
+
+3. Suvedame, kas yra prasoma, o paprasius failo, is kurio skaityti duomenis, iveski **kursiokai.txt**.
+
+v0.5
 
 1. Atsidarome **SarasoGen.cpp** faila, ji sukompiliuojame ir parasome, kiek studentu norime sugerenuoti ir kiek pazymiu;
 
@@ -38,24 +47,33 @@ intel i5 8250u @ 1.6gHz, 8.0GB ram
 
 Failu generavimas su 10 pazymiu
 
-| Įrašų kiekis |
-|--|
+| Įrašų kiekis | Laikas |
+|--|--|
 | 1000 | 0,03452s |
-| 10000 |  0,98574s | 
-| 100000 |  1,5652s |
+| 10000 | 0,98574s | 
+| 100000 | 1,5652s |
 | 1000000 | 12.45678s |
 | 10000000 | 120,54512s |
 
-Nuskaitymas is failu ir rusiavimas su 10 pazymiu
+Failo skaitymas (10 pazymiu)
 
 | Įrašų kiekis | std::vector | std::deque | std::list |
 |--|--|--|--|
-| 1000 | 0.066569s | 0,058194s | 0.048926s |
-| 10000 |  0.431014s | 0.303188s | 0.249416s |
-| 100000 |  4.26723s | 3.3032s | 2.84872s |
-| 1000000 | 54.84579s | 51.7396s | 28.9781s |
-| 10000000 | 299.54395s | 285.54856s | 232.5684s |
+| 1000 | 0,01s | 0.009s | 0.009s |
+| 10000 |  0.094s | 0.089s | 0.09s |
+| 100000 |  0.969s | 0.886s | 0.904s |
+| 1000000 | 11.994s | 9.573s | 9.072s |
+| 10000000 | 112.852s | 96.542s | 91.852s |
 
+Rusiavimas ir failo isvedimas (10 pazymiu)
+
+| Įrašų kiekis | std::vector | std::deque | std::list |
+|--|--|--|--|
+| 1000 | 0.029s | 0.03s | 0.034s |
+| 10000 |  0.211s | 0.211s | 0.19s |
+| 100000 |  2.094s | 2.144s | 1.506s |
+| 1000000 | 23.907s | 23.473s | 14.964s |
+| 10000000 | 230.852s | 230.389s | 150.023s |
 
 v0.4
 
@@ -65,13 +83,25 @@ v0.4
 
 3. Baigus darba, programa išmes bendrą informaciją, apie tai, kiek truko failų sudarymas ir studentų **sort'inimas**.
 
-| Studentų kiekis  | Programos laikas |
-| ------------- | ------------- | 
-| 1000 su 10 pazymiu | 0.066569s | 
-| 10000 su 10 pazymiu | 0.431014s | 
-| 100000 su 10 pazymiu | 4.26723s | 
-| 1000000 su 10 pazymiu | 54.84579s | 
-| 10000000 su 10 pazymiu | 299.54395s | 
+Failo skaitymas (10 pazymiu)
+
+| Įrašų kiekis | std::vector |
+|--|--|
+| 1000 | 0,01s | 
+| 10000 |  0.094s |
+| 100000 |  0.969s | 
+| 1000000 | 11.994s | 
+| 10000000 | 299.54395s | 
+
+Rusiavimas ir failo isvedimas (10 pazymiu)
+
+| Įrašų kiekis | std::vector |
+|--|--|
+| 1000 | 0.029s | 
+| 10000 |  0.211s |
+| 100000 |  2.094s | 
+| 1000000 | 23.907s | 
+| 10000000 | 230.852s | 
 
 v0.3
 
@@ -83,7 +113,32 @@ v0.3
 
 4. Sukurtas sąrašas žmonių su ju vardais, galutiniais įvertinimais ir pažymių mediana!
 
+v0.2
+
+1. Įveskite + arba - (atitinkamai skaityti iš failo ar pačiam įrašyti duomenis);
+
+2. Jeigu pasirinkot skaitymą iš failo, tai viskas bus padaryta be papildomų pastangų (failo pavadinimas turi būti "Kursiokai.txt");
+
+3. Jeigu pasirinkot duomenų įvedimą, tai sekite viską, kas bus nurodyta kompiliatoriuje;
+
+4. Sukurtas sąrašas žmonių su ju vardais, galutiniais įvertinimais ir pažymių mediana!
+
+v0.1
+
+1. Įveskite studentu kieki;
+
+2. Iveskite studento varda / pavarde;
+
+3. Iveskite atitinkama raide, t - ivesti pazymius, n - ivesti, bet be ribojimo (ivesti stop norint stabdyti ivedima), r - random sugeneruoti pazymiai;
+
+4. Iveskite egzamino pazymi (jei pasirinkot random pazymius, jis bus sugeneruotas atsitiktinai).
+
 # Releases
+
+v1.0
+
+Programa su dviem skirtingom strategijom, 1 - dvieju nauju konteineriu sukurimas ir isrusiavimas, 2 - vieno naujo konterinerio sukurimas kazkuriai studentu grupei, tada perkeliant i ji atitinkamus studentus, o is bendro konterinerio jie istrinami.
+
 v0.5 
 
 Programa skirta skaiciuoti laika su std::list, std::deque ir std::vector.
@@ -103,3 +158,4 @@ Programa, kurioje yra galimybe skaityti studentu duomenu failus
 v0.1
 
 Programa, kuri skaiciuoja studentu galutini ivertinima, ivedant studento varda/pavarde, pazymiu kieki bei pacius pazymius
+
