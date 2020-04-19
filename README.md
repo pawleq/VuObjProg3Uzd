@@ -75,6 +75,16 @@ v0.4
 
 3. Baigus darba, programa išmes bendrą informaciją, apie tai, kiek truko failų sudarymas ir studentų **sort'inimas**.
 
+Failu generavimas su 10 pazymiu
+
+| Įrašų kiekis | Laikas |
+|--|--|
+| 1000 | 0,03452s |
+| 10000 | 0,98574s | 
+| 100000 | 1,5652s |
+| 1000000 | 12.45678s |
+| 10000000 | 120,54512s |
+
 Failo skaitymas (10 pazymiu)
 
 | Įrašų kiekis | std::vector |
