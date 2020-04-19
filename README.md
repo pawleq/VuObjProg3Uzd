@@ -27,6 +27,8 @@ Galite naudoti programą.
 
 # Kaip naudoti programą?
 
+intel i5 8250u @ 1.6gHz, 8.0GB ram
+
 v0.4
 
 1. Įveskite studentų kiekį bei pažymiu kiekį, kuris veliau bus naudojamas generuoti studentų sąrašui.
@@ -35,13 +37,25 @@ v0.4
 
 3. Baigus darba, programa išmes bendrą informaciją, apie tai, kiek truko failų sudarymas ir studentų **sort'inimas**.
 
-| Studentų kiekis  | Programos laikas |
-| ------------- | ------------- | 
-| 1000 su 10 pazymiu | 0.066569s | 
-| 10000 su 10 pazymiu | 0.431014s | 
-| 100000 su 10 pazymiu | 4.26723s | 
-| 1000000 su 10 pazymiu | 54.84579s | 
-| 10000000 su 10 pazymiu | 299.54395s | 
+Failo skaitymas (10 pazymiu)
+
+| Įrašų kiekis | std::vector |
+|--|--|
+| 1000 | 0,01s | 
+| 10000 |  0.094s |
+| 100000 |  0.969s | 
+| 1000000 | 11.994s | 
+| 10000000 | 299.54395s | 
+
+Rusiavimas ir failo isvedimas (10 pazymiu)
+
+| Įrašų kiekis | std::vector |
+|--|--|
+| 1000 | 0.029s | 
+| 10000 |  0.211s |
+| 100000 |  2.094s | 
+| 1000000 | 23.907s | 
+| 10000000 | 230.852s | 
 
 v0.3
 
@@ -52,6 +66,26 @@ v0.3
 3. Jeigu pasirinkot duomenų įvedimą, tai sekite viską, kas bus nurodyta kompiliatoriuje;
 
 4. Sukurtas sąrašas žmonių su ju vardais, galutiniais įvertinimais ir pažymių mediana!
+
+v0.2
+
+1. Įveskite + arba - (atitinkamai skaityti iš failo ar pačiam įrašyti duomenis);
+
+2. Jeigu pasirinkot skaitymą iš failo, tai viskas bus padaryta be papildomų pastangų (failo pavadinimas turi būti "Kursiokai.txt");
+
+3. Jeigu pasirinkot duomenų įvedimą, tai sekite viską, kas bus nurodyta kompiliatoriuje;
+
+4. Sukurtas sąrašas žmonių su ju vardais, galutiniais įvertinimais ir pažymių mediana!
+
+v0.1
+
+1. Įveskite studentu kieki;
+
+2. Iveskite studento varda / pavarde;
+
+3. Iveskite atitinkama raide, t - ivesti pazymius, n - ivesti, bet be ribojimo (ivesti stop norint stabdyti ivedima), r - random sugeneruoti pazymiai;
+
+4. Iveskite egzamino pazymi (jei pasirinkot random pazymius, jis bus sugeneruotas atsitiktinai).
 
 # Releases
 
@@ -70,3 +104,4 @@ Programa, kurioje yra galimybe skaityti studentu duomenu failus
 v0.1
 
 Programa, kuri skaiciuoja studentu galutini ivertinima, ivedant studento varda/pavarde, pazymiu kieki bei pacius pazymius
+
