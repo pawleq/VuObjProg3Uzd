@@ -113,7 +113,7 @@ Failo skaitymas (10 pazymiu)
 | 10000 |  0.094s | 0.089s | 0.09s |
 | 100000 |  0.969s | 0.886s | 0.904s |
 | 1000000 | 11.994s | 9.573s | 9.072s |
-| 10000000 | 299.54395s | 285.54856s | 91.852s |
+| 10000000 | 112.852s | 96.542s | 91.852s |
 
 Rusiavimas ir failo isvedimas (10 pazymiu)
 
@@ -132,14 +132,6 @@ v0.4
 2. Palaukit, kol programa baigs savo darba.
 
 3. Baigus darba, programa išmes bendrą informaciją, apie tai, kiek truko failų sudarymas ir studentų **sort'inimas**.
-
-| Studentų kiekis  | Programos laikas |
-| ------------- | ------------- | 
-| 1000 su 10 pazymiu | 0.066569s | 
-| 10000 su 10 pazymiu | 0.431014s | 
-| 100000 su 10 pazymiu | 4.26723s | 
-| 1000000 su 10 pazymiu | 54.84579s | 
-| 10000000 su 10 pazymiu | 299.54395s | 
 
 Failo skaitymas (10 pazymiu)
 
