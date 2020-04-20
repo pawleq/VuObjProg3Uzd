@@ -131,29 +131,19 @@ void dequeSplit(deque <studentas> &studentai, int &b, unsigned int &Vilgis, unsi
 	std::sort(vargsiukas.begin(), vargsiukas.end(), compare_by_word);
 
 	std::ofstream failas("vargsiukai.txt");
-	failas << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde ";
-	failas << setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas ";
-	failas << setw(16) << std::left << setfill(' ') << "Galutinis vid. ";
-	failas << setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
+	failas << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde "<< setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas "<< setw(16) << std::left << setfill(' ') << "Galutinis vid. "<< setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
 	string eilute(Pilgis + Vilgis + 40, '-');
 	failas << eilute << endl;
 	for (size_t i = 0; i < vargsiukas.size(); i++) {
-		failas << setw(Pilgis + 6) << std::left << setfill(' ') << vargsiukas[i].pavarde;
-		failas << setw(Vilgis + 6) << std::left << setfill(' ') << vargsiukas[i].vardas;
-		failas << setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << vargsiukas[i].galutinis << vargsiukas[i].galutmed << endl;
+		failas << setw(Pilgis + 6) << std::left << setfill(' ') << vargsiukas[i].pavarde<< setw(Vilgis + 6) << std::left << setfill(' ') << vargsiukas[i].vardas<< setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << vargsiukas[i].galutinis << vargsiukas[i].galutmed << endl;
 	}
 	std::ofstream failas1("kietekai.txt");
-	failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde ";
-	failas1 << setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas ";
-	failas1 << setw(16) << std::left << setfill(' ') << "Galutinis vid. ";
-	failas1 << setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
+	failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde "<< setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas "<< setw(16) << std::left << setfill(' ') << "Galutinis vid. "<< setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
 	string eilute1(Pilgis + Vilgis + 40, '-');
 	failas1 << eilute1 << endl;
 	for (size_t i = 0; i < studentai.size(); i++)
 	{
-		failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << studentai[i].pavarde;
-		failas1 << setw(Vilgis + 6) << std::left << setfill(' ') << studentai[i].vardas;
-		failas1 << setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << studentai[i].galutinis << studentai[i].galutmed << endl;
+		failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << studentai[i].pavarde<< setw(Vilgis + 6) << std::left << setfill(' ') << studentai[i].vardas<< setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << studentai[i].galutinis << studentai[i].galutmed << endl;
 	}
 }
 void SpartosAnalize(deque<studentas> &studentai)
@@ -166,19 +156,26 @@ void SpartosAnalize(deque<studentas> &studentai)
 	cout << "Iveskite studentu failo pavadinima" << endl;
 	cin >> pav;
 	cout << "Pradedamas matuoti laikas" << endl;
-	Timer t;
-
+	std::chrono::steady_clock::time_point beginRead =
+    std::chrono::steady_clock::now();
 	ifstream file(pav);
-	if (!file)
+	if(!file)
 	{
-		cout << "Pavadinimas ivestas neteisingai" << endl;
+		cout<<"Pavadinimas ivestas neteisingai"<<endl;
 		exit(EXIT_FAILURE);
 	}
 	while (!file.eof())
 	{
 		FileRead(studentai, file);
 	}
-	FindLongest(studentai, Vilgis, Pilgis);
+	std::chrono::steady_clock::time_point endRead =
+    std::chrono::steady_clock::now();
+    FindLongest(studentai, Vilgis, Pilgis);
+    std::chrono::steady_clock::time_point beginSplit =
+    std::chrono::steady_clock::now();
 	dequeSplit(studentai, b, Vilgis, Pilgis);
-	cout << "Praejo " << t.elapsed() << " s" << endl;
+    std::chrono::steady_clock::time_point endSplit =
+    std::chrono::steady_clock::now();
+    std::cout << "Skaitymo laikas: "<< (double)std::chrono::duration_cast<std::chrono::milliseconds>(endRead - beginRead).count() / 1000<< "s" << std::endl;
+    std::cout << "Dalinimo ir irasymo laikas: "<< (double)std::chrono::duration_cast<std::chrono::milliseconds>(endSplit - beginSplit).count() / 1000<< "s" << std::endl;
 }
