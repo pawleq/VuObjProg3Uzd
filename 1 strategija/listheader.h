@@ -62,7 +62,7 @@ struct studentas
 		return galutinis;
 	}
 };
-
+/*
 class Timer {
 private:
 	// panaudojame using
@@ -77,4 +77,4 @@ public:
 	double elapsed() const {
 		return durationDouble(hrClock::now() - start).count();
 	}
-};
+};*/
