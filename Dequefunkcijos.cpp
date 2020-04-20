@@ -260,29 +260,19 @@ void dequeSplit(deque <studentas> &studentai, int &b, unsigned int &Vilgis, unsi
 
 
 	std::ofstream failas("vargsiukai.txt");
-	failas << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde ";
-	failas << setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas ";
-	failas << setw(16) << std::left << setfill(' ') << "Galutinis vid. ";
-	failas << setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
+	failas << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde "<< setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas "<< setw(16) << std::left << setfill(' ') << "Galutinis vid. "<< setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
 	string eilute(Pilgis + Vilgis + 40, '-');
 	failas << eilute << endl;
 	for (int i = 0; i < n; i++) {
-		failas << setw(Pilgis + 6) << std::left << setfill(' ') << studentai[i].pavarde;
-		failas << setw(Vilgis + 6) << std::left << setfill(' ') << studentai[i].vardas;
-		failas << setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << studentai[i].galutinis << studentai[i].galutmed << endl;
+		failas << setw(Pilgis + 6) << std::left << setfill(' ') << studentai[i].pavarde<< setw(Vilgis + 6) << std::left << setfill(' ') << studentai[i].vardas << setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << studentai[i].galutinis << studentai[i].galutmed << endl;
 	}
 	std::ofstream failas1("kietekai.txt");
-	failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde ";
-	failas1 << setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas ";
-	failas1 << setw(16) << std::left << setfill(' ') << "Galutinis vid. ";
-	failas1 << setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
+	failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << "Pavarde "<< setw(Vilgis + 6) << std::left << setfill(' ') << "Vardas "<< setw(16) << std::left << setfill(' ') << "Galutinis vid. "<< setw(16) << std::left << setfill(' ') << "Galutinis med. " << endl;
 	string eilute1(Pilgis + Vilgis + 40, '-');
 	failas1 << eilute1 << endl;
 	for (size_t i = n; i < studentai.size(); i++)
 	{
-		failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << studentai[i].pavarde;
-		failas1 << setw(Vilgis + 6) << std::left << setfill(' ') << studentai[i].vardas;
-		failas1 << setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << studentai[i].galutinis << studentai[i].galutmed << endl;
+		failas1 << setw(Pilgis + 6) << std::left << setfill(' ') << studentai[i].pavarde<< setw(Vilgis + 6) << std::left << setfill(' ') << studentai[i].vardas<< setw(16) << std::left << setfill(' ') << std::setprecision(2) << std::fixed << studentai[i].galutinis << studentai[i].galutmed << endl;
 	}
 }
 void SpartosAnalize(deque<studentas> &studentai)
