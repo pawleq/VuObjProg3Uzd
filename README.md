@@ -47,15 +47,26 @@ Failo generavimas su 10 pazymiu
 | 1000000 | 12.45678s |
 | 10000000 | 120,54512s |
 
-Nuskaitymas is failu ir rusiavimas su 10 pazymiu
+Nuskaitymas is failu (10 pazymiu)
 
 | Įrašų kiekis | std::vector | std::deque | std::list |
 |--|--|--|--|
-| 1000 | 0.047167s | 0.039861 s | 0.035906s |
-| 10000 |  0.317576s | 0.376004 s | 0.259386s |
-| 100000 |  3.56723s | 4.00563s | 2.84872s |
-| 1000000 | 45.84579s | 55.7396s | 29.017 s |
-| 10000000 | 275.54395s | 289.86856s | 232.5684s |
+| 1000 | 0.009s | 0.01s | 0.01s |
+| 10000 |  0.094s | 0.089s | 0.09s |
+| 100000 |  0.942s | 0.895s | 0.901s |
+| 1000000 | 9.421s | 8.922s | 9.02s |
+| 10000000 | 94.625s | 89.174s | 90.212s |
+
+
+Rusiavimas ir isvedimas i failus (10 pazymiu)
+
+| Įrašų kiekis | std::vector | std::deque | std::list |
+|--|--|--|--|
+| 1000 | 0.031s | 0.031s | 0.029s |
+| 10000 |  0.215s | 0.221s | 0.172s |
+| 100000 |  2.159s | 2.231s | 1.725s |
+| 1000000 | 21.623s | 22.123s | 17.126s |
+| 10000000 | 216.862s | 221.034s | 171.312s |
 
 v1.0 (antra strategija su optimizuotais vector konteineriais)
 
@@ -75,15 +86,26 @@ Failo generavimas su 10 pazymiu
 | 1000000 | 12.45678s |
 | 10000000 | 120,54512s |
 
-Nuskaitymas is failu ir rusiavimas su 10 pazymiu
+Nuskaitymas is failu (10 pazymiu)
 
 | Įrašų kiekis | std::vector | std::deque | std::list |
 |--|--|--|--|
-| 1000 | 0.047065s | 0.039936s | 0.0369s |
-| 10000 |  0.318903s | 0.335106s | 0.27327s |
-| 100000 |  3.23166s | 3.15175s | 2.61405s |
-| 1000000 | 32.1526 s | 33.8606 s | 25.704s |
-| 10000000 | 265.54395s | 287.78556s | 225.5684s |
+| 1000 | 0.009s | 0.009s | 0.01s |
+| 10000 |  0.094s| 0.086s | 0.09s |
+| 100000 |  0.942s | 0.883s | 0.8502s |
+| 1000000 | 9.452s | 8.825s | 8.501s |
+| 10000000 | 94.247s | 88.342s | 85.021s |
+
+
+Rusiavimas ir isvedimas i failus (10 pazymiu)
+
+| Įrašų kiekis | std::vector | std::deque | std::list |
+|--|--|--|--|
+| 1000 | 0.03s | 0.03s | 0.025s |
+| 10000 |  0.216s | 0.242s | 0.167s |
+| 100000 |  2.126s | 2.141s | 1.64872s |
+| 1000000 | 21.272s | 21.7396s | 16.017 s |
+| 10000000 | 212.625s | 219.526s | 162.5684s |
 
 **Pirma strategija yra letesne, kai sukuriami du atskiri konteineriai ir i juos surusiuojama bendro konteinerio studentai, o antra strategija, kai sukuriamas atskiras konteineris, pvz, vargsiukams ir i ji sutalpinami vargsiukai ir is bendro konteinerio jie istrinami**
 
